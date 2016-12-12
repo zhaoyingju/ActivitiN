@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4B169DD-DB71-443E-92E9-9087D33187C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bpmn_converter</RootNamespace>
+    <AssemblyName>bpmn-converter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.3.1.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.3.1.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="constants\BpmnXMLConstants.cs" />
+    <Compile Include="converter\AssociationXMLConverter.cs" />
+    <Compile Include="converter\BaseBpmnXMLConverter.cs" />
+    <Compile Include="converter\BoundaryEventXMLConverter.cs" />
+    <Compile Include="converter\BpmnXMLConverter.cs" />
+    <Compile Include="converter\BusinessRuleTaskXMLConverter.cs" />
+    <Compile Include="converter\CallActivityXMLConverter.cs" />
+    <Compile Include="converter\CatchEventXMLConverter.cs" />
+    <Compile Include="converter\child\ActivitiEventListenerParser.cs" />
+    <Compile Include="converter\child\ActivitiFailedjobRetryParser.cs" />
+    <Compile Include="converter\child\ActivitiListenerParser.cs" />
+    <Compile Include="converter\child\BaseChildElementParser.cs" />
+    <Compile Include="converter\child\CancelEventDefinitionParser.cs" />
+    <Compile Include="converter\child\CompensateEventDefinitionParser.cs" />
+    <Compile Include="converter\child\ConditionExpressionParser.cs" />
+    <Compile Include="converter\child\DataAssociationParser.cs" />
+    <Compile Include="converter\child\DataInputAssociationParser.cs" />
+    <Compile Include="converter\child\DataOutputAssociationParser.cs" />
+    <Compile Include="converter\child\DataStateParser.cs" />
+    <Compile Include="converter\child\DocumentationParser.cs" />
+    <Compile Include="converter\child\ErrorEventDefinitionParser.cs" />
+    <Compile Include="converter\child\ExecutionListenerParser.cs" />
+    <Compile Include="converter\child\FieldExtensionParser.cs" />
+    <Compile Include="converter\child\FlowNodeRefParser.cs" />
+    <Compile Include="converter\child\FormPropertyParser.cs" />
+    <Compile Include="converter\child\IOSpecificationParser.cs" />
+    <Compile Include="converter\child\MessageEventDefinitionParser.cs" />
+    <Compile Include="converter\child\MultiInstanceParser.cs" />
+    <Compile Include="converter\child\ScriptTextParser.cs" />
+    <Compile Include="converter\child\SignalEventDefinitionParser.cs" />
+    <Compile Include="converter\child\TaskListenerParser.cs" />
+    <Compile Include="converter\child\TerminateEventDefinitionParser.cs" />
+    <Compile Include="converter\child\TextAnnotationTextParser.cs" />
+    <Compile Include="converter\child\TimeCycleParser.cs" />
+    <Compile Include="converter\child\TimeDateParser.cs" />
+    <Compile Include="converter\child\TimeDurationParser.cs" />
+    <Compile Include="converter\child\TimerEventDefinitionParser.cs" />
+    <Compile Include="converter\ComplexGatewayXMLConverter.cs" />
+    <Compile Include="converter\DataStoreReferenceXMLConverter.cs" />
+    <Compile Include="converter\DelegatingXMLStreamWriter.cs" />
+    <Compile Include="converter\EndEventXMLConverter.cs" />
+    <Compile Include="converter\EventGatewayXMLConverter.cs" />
+    <Compile Include="converter\ExclusiveGatewayXMLConverter.cs" />
+    <Compile Include="converter\export\ActivitiListenerExport.cs" />
+    <Compile Include="converter\export\BPMNDIExport.cs" />
+    <Compile Include="converter\export\CollaborationExport.cs" />
+    <Compile Include="converter\export\DataStoreExport.cs" />
+    <Compile Include="converter\export\DefinitionsRootExport.cs" />
+    <Compile Include="converter\export\FailedJobRetryCountExport.cs" />
+    <Compile Include="converter\export\FieldExtensionExport.cs" />
+    <Compile Include="converter\export\LaneExport.cs" />
+    <Compile Include="converter\export\MultiInstanceExport.cs" />
+    <Compile Include="converter\export\ProcessExport.cs" />
+    <Compile Include="converter\export\SignalAndMessageDefinitionExport.cs" />
+    <Compile Include="converter\InclusiveGatewayXMLConverter.cs" />
+    <Compile Include="converter\IndentingXMLStreamWriter.cs" />
+    <Compile Include="converter\ManualTaskXMLConverter.cs" />
+    <Compile Include="converter\ParallelGatewayXMLConverter.cs" />
+    <Compile Include="converter\parser\BpmnEdgeParser.cs" />
+    <Compile Include="converter\parser\BpmnShapeParser.cs" />
+    <Compile Include="converter\parser\DataStoreParser.cs" />
+    <Compile Include="converter\parser\DefinitionsParser.cs" />
+    <Compile Include="converter\parser\ExtensionElementsParser.cs" />
+    <Compile Include="converter\parser\ImportParser.cs" />
+    <Compile Include="converter\parser\InterfaceParser.cs" />
+    <Compile Include="converter\parser\ItemDefinitionParser.cs" />
+    <Compile Include="converter\parser\LaneParser.cs" />
+    <Compile Include="converter\parser\MessageFlowParser.cs" />
+    <Compile Include="converter\parser\MessageParser.cs" />
+    <Compile Include="converter\parser\ParticipantParser.cs" />
+    <Compile Include="converter\parser\PotentialStarterParser.cs" />
+    <Compile Include="converter\parser\ProcessParser.cs" />
+    <Compile Include="converter\parser\SignalParser.cs" />
+    <Compile Include="converter\parser\SubProcessParser.cs" />
+    <Compile Include="converter\ReceiveTaskXMLConverter.cs" />
+    <Compile Include="converter\ScriptTaskXMLConverter.cs" />
+    <Compile Include="converter\SendTaskXMLConverter.cs" />
+    <Compile Include="converter\SequenceFlowXMLConverter.cs" />
+    <Compile Include="converter\ServiceTaskXMLConverter.cs" />
+    <Compile Include="converter\StartEventXMLConverter.cs" />
+    <Compile Include="converter\TaskXMLConverter.cs" />
+    <Compile Include="converter\TextAnnotationXMLConverter.cs" />
+    <Compile Include="converter\ThrowEventXMLConverter.cs" />
+    <Compile Include="converter\UserTaskXMLConverter.cs" />
+    <Compile Include="converter\util\XMLStreamReader.cs" />
+    <Compile Include="converter\util\BpmnXMLUtil.cs" />
+    <Compile Include="converter\util\CommaSplitter.cs" />
+    <Compile Include="converter\util\InputStreamProvider.cs" />
+    <Compile Include="converter\util\StringExtensionMethods.cs" />
+    <Compile Include="converter\ValuedDataObjectXMLConverter.cs" />
+    <Compile Include="converter\XMLStreamReaderUtil.cs" />
+    <Compile Include="converter\XMLStreamWriter.cs" />
+    <Compile Include="exceptions\XMLException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bpmn-model\bpmn-model.csproj">
+      <Project>{d7072e59-ed2d-4d4a-83fb-7021694547a0}</Project>
+      <Name>bpmn-model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

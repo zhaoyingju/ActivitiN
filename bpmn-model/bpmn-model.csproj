@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7072E59-ED2D-4D4A-83FB-7021694547A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bpmn_model</RootNamespace>
+    <AssemblyName>bpmn-model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivitiListener.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="Artifact.cs" />
+    <Compile Include="Assignment.cs" />
+    <Compile Include="Association.cs" />
+    <Compile Include="AssociationDirection.cs" />
+    <Compile Include="AssociationModel.cs" />
+    <Compile Include="BaseElement.cs" />
+    <Compile Include="BooleanDataObject.cs" />
+    <Compile Include="BoundaryEvent.cs" />
+    <Compile Include="BpmnModel.cs" />
+    <Compile Include="BusinessRuleTask.cs" />
+    <Compile Include="CallActivity.cs" />
+    <Compile Include="CancelEventDefinition.cs" />
+    <Compile Include="CompensateEventDefinition.cs" />
+    <Compile Include="ComplexDataType.cs" />
+    <Compile Include="ComplexGateway.cs" />
+    <Compile Include="CustomProperty.cs" />
+    <Compile Include="DataAssociation.cs" />
+    <Compile Include="DataGrid.cs" />
+    <Compile Include="DataGridField.cs" />
+    <Compile Include="DataGridRow.cs" />
+    <Compile Include="DataObject.cs" />
+    <Compile Include="DataSpec.cs" />
+    <Compile Include="DataStore.cs" />
+    <Compile Include="DataStoreReference.cs" />
+    <Compile Include="DateDataObject.cs" />
+    <Compile Include="DoubleDataObject.cs" />
+    <Compile Include="EndEvent.cs" />
+    <Compile Include="ErrorEventDefinition.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventDefinition.cs" />
+    <Compile Include="EventGateway.cs" />
+    <Compile Include="EventListener.cs" />
+    <Compile Include="EventSubProcess.cs" />
+    <Compile Include="ExclusiveGateway.cs" />
+    <Compile Include="ExtensionAttribute.cs" />
+    <Compile Include="ExtensionElement.cs" />
+    <Compile Include="FieldExtension.cs" />
+    <Compile Include="FlowElement.cs" />
+    <Compile Include="FlowElementsContainer.cs" />
+    <Compile Include="FlowNode.cs" />
+    <Compile Include="FormProperty.cs" />
+    <Compile Include="FormValue.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="GraphicInfo.cs" />
+    <Compile Include="HasExecutionListeners.cs" />
+    <Compile Include="HasExtensionAttributes.cs" />
+    <Compile Include="ImplementationType.cs" />
+    <Compile Include="Import.cs" />
+    <Compile Include="InclusiveGateway.cs" />
+    <Compile Include="IntegerDataObject.cs" />
+    <Compile Include="Interface.cs" />
+    <Compile Include="IntermediateCatchEvent.cs" />
+    <Compile Include="IOParameter.cs" />
+    <Compile Include="IOSpecification.cs" />
+    <Compile Include="ItemDefinition.cs" />
+    <Compile Include="Lane.cs" />
+    <Compile Include="LongDataObject.cs" />
+    <Compile Include="ManualTask.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageEventDefinition.cs" />
+    <Compile Include="MessageFlow.cs" />
+    <Compile Include="MultiInstanceLoopCharacteristics.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="ParallelGateway.cs" />
+    <Compile Include="parse\Problem.cs" />
+    <Compile Include="parse\Warning.cs" />
+    <Compile Include="Pool.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiveTask.cs" />
+    <Compile Include="ScriptTask.cs" />
+    <Compile Include="SendTask.cs" />
+    <Compile Include="SequenceFlow.cs" />
+    <Compile Include="ServiceTask.cs" />
+    <Compile Include="Signal.cs" />
+    <Compile Include="SignalEventDefinition.cs" />
+    <Compile Include="StartEvent.cs" />
+    <Compile Include="StringDataObject.cs" />
+    <Compile Include="SubProcess.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TerminateEventDefinition.cs" />
+    <Compile Include="TextAnnotation.cs" />
+    <Compile Include="ThrowEvent.cs" />
+    <Compile Include="TimerEventDefinition.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="UserTask.cs" />
+    <Compile Include="ValuedDataObject.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
