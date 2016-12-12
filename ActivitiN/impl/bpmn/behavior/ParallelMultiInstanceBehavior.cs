@@ -166,7 +166,7 @@ namespace org.activiti.engine.impl.bpmn.behavior
 				executionToRemove.inactivate();
 				executionToRemove.deleteCascade("multi-instance completed");
 			  }
-			  executionEntity.takeAll(executionEntity.Activity.OutgoingTransitions, joinedExecutions);
+			  executionEntity.takeAll(executionEntity.Activity.setOutgoingTransitions, joinedExecutions);
 			}
 
 		}

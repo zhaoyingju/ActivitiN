@@ -65,7 +65,7 @@ namespace org.activiti.engine.impl.bpmn.behavior
 		((InterpretableExecution)outgoingExecution).Activity = activity;
 
 		// continue execution
-		outgoingExecution.takeAll(activity.OutgoingTransitions, Collections.EMPTY_LIST);
+		outgoingExecution.takeAll(activity.setOutgoingTransitions, Collections.EMPTY_LIST);
 	  }
 
 	  public virtual bool Interrupting

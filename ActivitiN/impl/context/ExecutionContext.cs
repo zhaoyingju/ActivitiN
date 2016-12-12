@@ -8,7 +8,6 @@ namespace org.activiti.engine.impl.context
 
     public class ExecutionContext
     {
-
         protected internal ExecutionEntity execution;
 
         public ExecutionContext(InterpretableExecution execution)
@@ -50,5 +49,4 @@ namespace org.activiti.engine.impl.context
             }
         }
     }
-
 }

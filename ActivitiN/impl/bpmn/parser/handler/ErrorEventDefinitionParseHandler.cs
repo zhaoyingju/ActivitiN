@@ -63,7 +63,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 
 			// the scope of the event subscription is the parent of the event
 			// subprocess (subscription must be created when parent is initialized)
-			ScopeImpl catchingScope = ((ActivityImpl) scope).Parent;
+			ScopeImpl catchingScope = ((ActivityImpl) scope).setParent;
 
 			createErrorStartEventDefinition(modelErrorEvent, activity, catchingScope);
 		  }
@@ -96,7 +96,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 	  {
 
 		nestedErrorEventActivity.setProperty("type", "boundaryError");
-		ScopeImpl catchingScope = nestedErrorEventActivity.Parent;
+		ScopeImpl catchingScope = nestedErrorEventActivity.setParent;
 		((ActivityImpl) catchingScope).Scope = true;
 
 		org.activiti.engine.impl.bpmn.parser.ErrorEventDefinition definition = new org.activiti.engine.impl.bpmn.parser.ErrorEventDefinition(nestedErrorEventActivity.Id);

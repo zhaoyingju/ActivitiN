@@ -61,7 +61,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 
 		  // the scope of the event subscription is the parent of the event
 		  // subprocess (subscription must be created when parent is initialized)
-		  ScopeImpl catchingScope = ((ActivityImpl) scope).Parent;
+		  ScopeImpl catchingScope = ((ActivityImpl) scope).setParent;
 
 		  EventSubscriptionDeclaration eventSubscriptionDeclaration = new EventSubscriptionDeclaration(messageDefinition.MessageRef, "message");
 		  eventSubscriptionDeclaration.ActivityId = activity.Id;
@@ -86,7 +86,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 		  if (getPrecedingEventBasedGateway(bpmnParse, (IntermediateCatchEvent) bpmnParse.CurrentFlowElement) != null)
 		  {
 			eventSubscription.ActivityId = activity.Id;
-			addEventSubscriptionDeclaration(bpmnParse, eventSubscription, messageDefinition, activity.Parent);
+			addEventSubscriptionDeclaration(bpmnParse, eventSubscription, messageDefinition, activity.setParent);
 		  }
 		  else
 		  {
@@ -106,11 +106,11 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 
 		  EventSubscriptionDeclaration eventSubscriptionDeclaration = new EventSubscriptionDeclaration(messageDefinition.MessageRef, "message");
 		  eventSubscriptionDeclaration.ActivityId = activity.Id;
-		  addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, messageDefinition, activity.Parent);
+		  addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, messageDefinition, activity.setParent);
 
-		  if (activity.Parent is ActivityImpl)
+		  if (activity.setParent is ActivityImpl)
 		  {
-			((ActivityImpl) activity.Parent).Scope = true;
+			((ActivityImpl) activity.setParent).Scope = true;
 		  }
 		}
 

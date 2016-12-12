@@ -93,7 +93,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 		  TimerDeclarationImpl timerDeclaration = createTimer(bpmnParse, timerEventDefinition, timerActivity, TimerCatchIntermediateEventJobHandler.TYPE);
 		  if (getPrecedingEventBasedGateway(bpmnParse, (IntermediateCatchEvent) bpmnParse.CurrentFlowElement) != null)
 		  {
-			addTimerDeclaration(timerActivity.Parent, timerDeclaration);
+			addTimerDeclaration(timerActivity.setParent, timerDeclaration);
 		  }
 		  else
 		  {
@@ -116,11 +116,11 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 			timerDeclaration.InterruptingTimer = true;
 		  }
 
-		  addTimerDeclaration(timerActivity.Parent, timerDeclaration);
+		  addTimerDeclaration(timerActivity.setParent, timerDeclaration);
 
-		  if (timerActivity.Parent is ActivityImpl)
+		  if (timerActivity.setParent is ActivityImpl)
 		  {
-			((ActivityImpl) timerActivity.Parent).Scope = true;
+			((ActivityImpl) timerActivity.setParent).Scope = true;
 		  }
 
 		  timerActivity.ActivityBehavior = bpmnParse.ActivityBehaviorFactory.createBoundaryEventActivityBehavior((BoundaryEvent) bpmnParse.CurrentFlowElement, interrupting, timerActivity);

@@ -155,13 +155,13 @@ namespace org.activiti.engine.impl.bpmn.helper
 		ActivityExecution leavingExecution = execution;
 		ActivityImpl currentActivity = (ActivityImpl) execution.Activity;
 
-		ScopeImpl catchingScope = errorHandler.Parent;
+		ScopeImpl catchingScope = errorHandler.setParent;
 		if (catchingScope is ActivityImpl)
 		{
 		  ActivityImpl catchingScopeActivity = (ActivityImpl) catchingScope;
 		  if (!catchingScopeActivity.Scope) // event subprocesses
 		  {
-			catchingScope = catchingScopeActivity.Parent;
+			catchingScope = catchingScopeActivity.setParent;
 		  }
 		}
 
@@ -178,7 +178,7 @@ namespace org.activiti.engine.impl.bpmn.helper
 		  }
 		  else
 		  {
-			currentActivity = (ActivityImpl) currentActivity.Parent;
+			currentActivity = (ActivityImpl) currentActivity.setParent;
 
 			// Traverse parents until one is found that is a scope 
 			// and matches the activity the boundary event is defined on

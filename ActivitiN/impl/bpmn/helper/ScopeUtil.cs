@@ -188,7 +188,7 @@ namespace org.activiti.engine.impl.bpmn.helper
 	  public static void createEventScopeExecution(ExecutionEntity execution)
 	  {
 
-		ExecutionEntity eventScope = ScopeUtil.findScopeExecutionForScope(execution, execution.Activity.Parent);
+		ExecutionEntity eventScope = ScopeUtil.findScopeExecutionForScope(execution, execution.Activity.setParent);
 
 		IList<CompensateEventSubscriptionEntity> eventSubscriptions = execution.CompensateEventSubscriptions;
 

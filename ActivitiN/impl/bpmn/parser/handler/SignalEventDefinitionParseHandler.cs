@@ -81,7 +81,7 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 		  if (getPrecedingEventBasedGateway(bpmnParse, (IntermediateCatchEvent) bpmnParse.CurrentFlowElement) != null)
 		  {
 			eventSubscriptionDeclaration.ActivityId = activity.Id;
-			addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, signalDefinition, activity.Parent);
+			addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, signalDefinition, activity.setParent);
 		  }
 		  else
 		  {
@@ -119,11 +119,11 @@ namespace org.activiti.engine.impl.bpmn.parser.handler
 			eventSubscriptionDeclaration.Configuration = signal.Scope;
 		  }
 
-		  addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, signalDefinition, activity.Parent);
+		  addEventSubscriptionDeclaration(bpmnParse, eventSubscriptionDeclaration, signalDefinition, activity.setParent);
 
-		  if (activity.Parent is ActivityImpl)
+		  if (activity.setParent is ActivityImpl)
 		  {
-			((ActivityImpl) activity.Parent).Scope = true;
+			((ActivityImpl) activity.setParent).Scope = true;
 		  }
 
 		}

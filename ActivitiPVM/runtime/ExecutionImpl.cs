@@ -587,9 +587,7 @@ namespace org.activiti.engine.impl.pvm.runtime
             IList<ActivityExecution> otherConcurrentExecutions = new List<ActivityExecution>();
             if (Concurrent)
             {
-                //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-                //ORIGINAL LINE: java.util.List< ? extends org.activiti.engine.impl.pvm.delegate.ActivityExecution> concurrentExecutions = getParent().getExecutions();
-                IList <?> concurrentExecutions = getParent().Executions;
+                IList<ActivityExecution> concurrentExecutions = getParent().Executions;
                 foreach (ActivityExecution concurrentExecution in concurrentExecutions)
                 {
                     if (concurrentExecution.Activity != null && concurrentExecution.Activity.Id.Equals(activity.Id))

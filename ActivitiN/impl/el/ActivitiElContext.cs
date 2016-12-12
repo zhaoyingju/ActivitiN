@@ -13,49 +13,49 @@
 namespace org.activiti.engine.impl.el
 {
 
-	using ELContext = org.activiti.engine.impl.javax.el.ELContext;
-	using ELResolver = org.activiti.engine.impl.javax.el.ELResolver;
-	using FunctionMapper = org.activiti.engine.impl.javax.el.FunctionMapper;
-	using VariableMapper = org.activiti.engine.impl.javax.el.VariableMapper;
+    using ELContext = org.activiti.engine.impl.javax.el.ELContext;
+    using ELResolver = org.activiti.engine.impl.javax.el.ELResolver;
+    using FunctionMapper = org.activiti.engine.impl.javax.el.FunctionMapper;
+    using VariableMapper = org.activiti.engine.impl.javax.el.VariableMapper;
 
 
-	/// <summary>
-	/// @author Tom Baeyens
-	/// @author Joram Barrez
-	/// </summary>
-	public class ActivitiElContext : ELContext
-	{
+    /// <summary>
+    /// @author Tom Baeyens
+    /// @author Joram Barrez
+    /// </summary>
+    public class ActivitiElContext : ELContext
+    {
 
-	  protected internal ELResolver elResolver;
+        protected internal ELResolver elResolver;
 
-	  public ActivitiElContext(ELResolver elResolver)
-	  {
-		this.elResolver = elResolver;
-	  }
+        public ActivitiElContext(ELResolver elResolver)
+        {
+            this.elResolver = elResolver;
+        }
 
-	  public override ELResolver ELResolver
-	  {
-		  get
-		  {
-			return elResolver;
-		  }
-	  }
+        public override ELResolver ELResolver
+        {
+            get
+            {
+                return elResolver;
+            }
+        }
 
-	  public override FunctionMapper FunctionMapper
-	  {
-		  get
-		  {
-			return new ActivitiFunctionMapper();
-		  }
-	  }
+        public override FunctionMapper FunctionMapper
+        {
+            get
+            {
+                return new ActivitiFunctionMapper();
+            }
+        }
 
-	  public override VariableMapper VariableMapper
-	  {
-		  get
-		  {
-			return null;
-		  }
-	  }
-	}
+        public override VariableMapper VariableMapper
+        {
+            get
+            {
+                return null;
+            }
+        }
+    }
 
 }
